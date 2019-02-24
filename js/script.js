@@ -1,3 +1,4 @@
+// Create quotes
 const quotes = [
   {
     quote: "Programs must be written for people to read, and only incidentally for machines to execute",
@@ -33,6 +34,7 @@ const quotes = [
   }
 ];
 
+// Helper number generator function to keep other functions clean
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * quotes.length);
 }
@@ -42,6 +44,7 @@ const printQuote = () => {
 
   console.log(quote);
 
+  // Create html content - use conditional statements to check for additional object properties and append them to the html accordingly
   let quoteHTML = `
   <p class="quote"> ${quote.quote} </p>
   <p class="source"> ${quote.source}`;
@@ -56,6 +59,7 @@ const printQuote = () => {
   document.getElementById("quote-box").innerHTML = quoteHTML;
 }
 
+// Return a random quote from the quotes array
 const getRandomQuote = () => {
   const index = generateRandomNumber();
   return quotes[index];
