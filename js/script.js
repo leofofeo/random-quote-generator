@@ -43,15 +43,19 @@ const printQuote = () => {
 
   console.log(quote);
 
-  const quoteHTML = `
+  let quoteHTML = `
   <p class="quote"> ${quote.quote} </p>
-  <p class="source"> ${quote.source}
-    <span class="citation"> ${quote.citation} </span>
-    <span class="year"> ${quote.year} </span>
-  </p>
-  
-  `
-  
+  <p class="source"> ${quote.source}`;
+
+  if (quote.hasOwnProperty('citation')) {
+    quoteHTML = quoteHTML + `<span class="citation"> ${quote.citation}</span>`;
+    console.log(quoteHTML)
+;  }
+  if (quote.hasOwnProperty('year')) {
+    quoteHTML = quoteHTML + `<span class="year"> ${quote.year} </span>`;
+  } 
+  quoteHTML = quoteHTML + '</p>';
+  document.getElementById("quote-box").innerHTML = quoteHTML;
 }
 
 const getRandomQuote = () => {
@@ -61,6 +65,3 @@ const getRandomQuote = () => {
 
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
