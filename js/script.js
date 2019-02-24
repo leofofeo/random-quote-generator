@@ -49,8 +49,7 @@ const printQuote = () => {
 
   if (quote.hasOwnProperty('citation')) {
     quoteHTML = quoteHTML + `<span class="citation"> ${quote.citation}</span>`;
-    console.log(quoteHTML)
-;  }
+   }
   if (quote.hasOwnProperty('year')) {
     quoteHTML = quoteHTML + `<span class="year"> ${quote.year} </span>`;
   } 
